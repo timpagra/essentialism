@@ -1,11 +1,7 @@
 export class FizzBuzz {
   toFizzBuzz(n: number): string {
-    if (n < 1) {
-      throw new Error('Number must be greater than 1');
-    }
-
-    if (n > 100) {
-      throw new Error('Number must be less than 100');
+    if (n < 1 || n > 100) {
+      throw new Error('Number must be between 1 and 100');
     }
 
     if (n % 3 === 0 && n % 5 === 0) {
