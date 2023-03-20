@@ -9,4 +9,10 @@ describe('fizzbuzz', () => {
     let fizzbuzz = new FizzBuzz();
     expect(typeof fizzbuzz.toFizzBuzz(1)).toBe('string');
   });
+
+  it('should not accept a number less than 1', () => {
+    let fizzbuzz = new FizzBuzz();
+
+    expect(() => fizzbuzz.toFizzBuzz(0)).toThrow();
+  });
 });
