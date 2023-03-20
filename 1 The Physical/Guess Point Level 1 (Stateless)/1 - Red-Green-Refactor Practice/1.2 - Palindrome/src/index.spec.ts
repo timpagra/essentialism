@@ -12,13 +12,13 @@ describe('Palindrome checker', () => {
   });
 
   it('should return true for a palindrome words', () => {
-    ['kayak', 'level', 'noon', 'radar'].forEach((word) => {
+    ['kayak', 'level', 'noon', 'radar', 'mom'].forEach((word) => {
       expect(checker.isPalindrome(word)).toBeTruthy();
     });
   });
 
   it('should ignore casing in palindrome words', () => {
-    ['Kayak', 'LeVel', 'NoOn', 'RaDar'].forEach((word) => {
+    ['Kayak', 'LeVel', 'NoOn', 'RaDar', 'Mom'].forEach((word) => {
       expect(checker.isPalindrome(word)).toBeTruthy();
     });
   });
