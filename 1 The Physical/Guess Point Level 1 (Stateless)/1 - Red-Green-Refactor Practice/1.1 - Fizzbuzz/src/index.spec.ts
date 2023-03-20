@@ -15,4 +15,10 @@ describe('fizzbuzz', () => {
 
     expect(() => fizzbuzz.toFizzBuzz(0)).toThrow();
   });
+
+  it('should not accept a number greater than 100', () => {
+    let fizzbuzz = new FizzBuzz();
+
+    expect(() => fizzbuzz.toFizzBuzz(101)).toThrow();
+  });
 });
