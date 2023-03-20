@@ -1,5 +1,8 @@
 export class PalindromeChecker {
   isPalindrome(word: string): boolean {
-    return word === word.split('').reverse().join('');
+    return (
+      word.toLocaleLowerCase() ===
+      word.split('').reverse().join('').toLocaleLowerCase()
+    );
   }
 }

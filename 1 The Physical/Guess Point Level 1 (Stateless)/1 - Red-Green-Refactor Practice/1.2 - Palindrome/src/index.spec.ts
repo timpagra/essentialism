@@ -16,4 +16,10 @@ describe('Palindrome checker', () => {
       expect(checker.isPalindrome(word)).toBeTruthy();
     });
   });
+
+  it('should ignore casing in palindrome words', () => {
+    ['Kayak', 'LeVel', 'NoOn', 'RaDar'].forEach((word) => {
+      expect(checker.isPalindrome(word)).toBeTruthy();
+    });
+  });
 });
