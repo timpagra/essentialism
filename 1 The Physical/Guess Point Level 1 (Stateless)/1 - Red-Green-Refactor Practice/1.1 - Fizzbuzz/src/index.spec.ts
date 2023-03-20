@@ -21,4 +21,17 @@ describe('fizzbuzz', () => {
 
     expect(() => fizzbuzz.toFizzBuzz(101)).toThrow();
   });
+
+  it('should return multiples of 3 as Fizz', () => {
+    let fizzbuzz = new FizzBuzz();
+
+    const testCases = [
+      3, 6, 9, 12, 18, 21, 24, 27, 33, 36, 39, 42, 48, 51, 54, 57, 63, 66, 69,
+      72, 78, 81, 84, 87, 93, 96, 99,
+    ];
+
+    testCases.forEach((testCase) => {
+      expect(fizzbuzz.toFizzBuzz(testCase)).toBe('Fizz');
+    });
+  });
 });

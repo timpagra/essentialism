@@ -8,6 +8,10 @@ export class FizzBuzz {
       throw new Error('Number must be less than 100');
     }
 
+    if (n % 3 === 0) {
+      return 'Fizz';
+    }
+
     return n.toString();
   }
 }
