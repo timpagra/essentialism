@@ -1,8 +1,6 @@
 export class PalindromeChecker {
   isPalindrome(word: string): boolean {
-    return (
-      word.toLocaleLowerCase() ===
-      word.split('').reverse().join('').toLocaleLowerCase()
-    );
+    const cleanWord = word.toLowerCase().replace(/[^a-z]/g, '');
+    return cleanWord === cleanWord.split('').reverse().join('');
   }
 }
