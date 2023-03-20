@@ -34,4 +34,14 @@ describe('fizzbuzz', () => {
       expect(fizzbuzz.toFizzBuzz(testCase)).toBe('Fizz');
     });
   });
+
+  it('should return multiples of 5 as Buzz', () => {
+    let fizzbuzz = new FizzBuzz();
+
+    const testCases = [5, 10, 20, 25, 35, 40, 50, 55, 65, 70, 80, 85, 95, 100];
+
+    testCases.forEach((testCase) => {
+      expect(fizzbuzz.toFizzBuzz(testCase)).toBe('Buzz');
+    });
+  });
 });
