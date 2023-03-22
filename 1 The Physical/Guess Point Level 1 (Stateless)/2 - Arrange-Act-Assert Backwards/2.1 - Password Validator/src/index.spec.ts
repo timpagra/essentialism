@@ -11,7 +11,7 @@ describe('password validator', () => {
   });
 
   it('should validate password contains at least one digit', () => {
-    expect(passwordValidator.validate('abcd3')).toBeTruthy();
+    expect(passwordValidator.validate('Abcd3')).toBeTruthy();
   });
 
   it('should contain at least 5 characters', () => {
@@ -24,5 +24,11 @@ describe('password validator', () => {
         'abchhedjnslderkjhslkdfhjlksdfjhafdjkh;dsfaehkasjaksbfad3'
       )
     ).toBeFalsy();
+  });
+
+  it('should contain at least one uppercase letter', () => {
+    expect(passwordValidator.validate('abcd3')).toBeFalsy();
+
+    expect(passwordValidator.validate('Abcd3')).toBeTruthy();
   });
 });
