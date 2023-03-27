@@ -1,18 +1,41 @@
+export enum ErrorMessages {
+  PRESENCE_OF_DIGIT = 'Password must contain at least one digit',
+  LENGTH = 'Password must be between 5 and 15 characters',
+  PRESENCE_OF_UPPERCASE = 'Password must contain at least one uppercase letter',
+}
+
+type ValidationResult = {
+  result: boolean;
+  errors: ErrorMessages[];
+};
+
 export class PasswordValidator {
-  validate(password: string) {
+  validate(password: string): ValidationResult {
     if (!this.validatePresenceOfDigit(password)) {
-      return false;
+      return {
+        result: false,
+        errors: [ErrorMessages.PRESENCE_OF_DIGIT],
+      };
     }
 
     if (!this.validateLength(password)) {
-      return false;
+      return {
+        result: false,
+        errors: [ErrorMessages.LENGTH],
+      };
     }
 
     if (!this.validatePresenceOfUppercase(password)) {
-      return false;
+      return {
+        result: false,
+        errors: [ErrorMessages.PRESENCE_OF_UPPERCASE],
+      };
     }
 
-    return true;
+    return {
+      result: true,
+      errors: [],
+    };
   }
 
   validatePresenceOfDigit(password: string): boolean {
