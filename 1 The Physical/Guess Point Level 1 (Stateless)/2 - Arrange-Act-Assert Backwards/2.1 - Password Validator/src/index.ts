@@ -47,6 +47,12 @@ export class PasswordValidator {
   }
 
   validatePresenceOfUppercase(password: string): boolean {
-    return /[A-Z]/.test(password);
+    const lowercasePassword = password.toLowerCase();
+    for (let i = 0; i < password.length; i++) {
+      if (password[i] !== lowercasePassword[i]) {
+        return true;
+      }
+    }
+    return false;
   }
 }
