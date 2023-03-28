@@ -32,4 +32,8 @@ export class StatisticsCalculator {
 
     return max;
   }
+
+  calculateCount(numbers: number[]): number {
+    return numbers.length;
+  }
 }

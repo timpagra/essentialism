@@ -23,4 +23,14 @@ describe('stats calculator', () => {
     const result = statsCalculator.calculateMaximum(numbers);
     expect(result).toEqual(5);
   });
+
+  it('should calculate the number of elements in the sequence', () => {
+    const numbers = [1, 2, 3, 4, 5, 0, -1];
+    const result = statsCalculator.calculateCount(numbers);
+    expect(result).toEqual(7);
+
+    const emptyNumbers: number[] = [];
+    const emptyResult = statsCalculator.calculateCount(emptyNumbers);
+    expect(emptyResult).toEqual(0);
+  });
 });
