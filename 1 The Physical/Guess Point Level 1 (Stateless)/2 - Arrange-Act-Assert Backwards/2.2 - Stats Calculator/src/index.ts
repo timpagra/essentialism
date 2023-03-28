@@ -6,7 +6,7 @@ export class StatisticsCalculator {
       sum += numbers[i];
     }
 
-    return sum / numbers.length;
+    return Number((sum / numbers.length).toFixed(12));
   }
 
   calculateMinimum(numbers: number[]): number {
